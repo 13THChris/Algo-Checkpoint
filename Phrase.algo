@@ -1,0 +1,34 @@
+ALGORITHM Phrase
+Variables :
+    phrase := chaîne de caractères
+    caract:= caractère
+    nbMots := entier
+    nbVoyelles := entier
+
+Début
+    phrase := ''
+    nbMots := 0
+    nbVoyelles := 0
+    
+    Ecrire ("Veuillez saisir une phrase se terminant par un point : ")
+    Lire (caract)
+    
+    Tant que (caract <> '.') faire
+        Si (caract = caractère) alors
+            phrase = phrase + caract
+            Si (caract = 'a','e','i','o','u','y') alors
+                nbVoyelles = nbVoyelles + 1
+            Fin Si
+        Sinon si (caract = '')
+            nbMots = nbMots + 1
+        Fin Si
+        Lire (caract)
+    Fin Tant que
+    
+    Si (phrase <> '') alors
+        nbMots = nbMots + 1  // Pour compter le dernier mot
+    Fin Si
+    
+    Ecrire ("Nombre de mots dans la phrase : ", nbMots)
+    Ecrire ("Nombre de voyelles dans la phrase : ", nbVoyelles)
+Fin
